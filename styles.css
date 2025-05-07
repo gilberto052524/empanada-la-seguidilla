@@ -1,84 +1,62 @@
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f2f2f2;
   text-align: center;
+  margin: 0;
+  background-color: #f8f8f8;
 }
 
 header {
-  background: #fff;
   padding: 20px;
+  background-color: #fff;
 }
 
 .logo {
-  width: 120px;
-  height: auto;
-  border-radius: 25px;
+  width: 150px;
+  border-radius: 20px;
 }
 
 h1 {
-  margin: 10px 0 0;
+  margin: 10px 0;
+  color: #333;
 }
 
-.button-container {
-  margin: 20px;
+.botones-principales {
+  margin-top: 20px;
 }
 
-.option-button {
+button {
   padding: 10px 20px;
   margin: 10px;
-  background: green;
-  color: white;
   border: none;
-  border-radius: 10px;
+  background-color: green;
+  color: white;
   font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.form-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 2px solid green;
-  padding: 20px;
-  margin: 20px auto;
-  width: 90%;
+input, select {
+  display: block;
+  width: 80%;
   max-width: 400px;
-  background: #fff;
-  border-radius: 10px;
-}
-
-.form-box input,
-.form-box select {
-  width: 100%;
+  margin: 10px auto;
   padding: 10px;
-  margin: 8px 0;
-  border: 1px solid green;
+  border: 2px solid green;
+  border-radius: 5px;
   color: black;
-  border-radius: 5px;
 }
 
-.form-box button {
-  width: 100%;
-  padding: 10px;
-  background: green;
-  color: white;
-  border: none;
-  border-radius: 5px;
-}
-
-footer {
-  background: #333;
-  color: #fff;
-  padding: 20px;
-  font-size: 14px;
-}
-
-footer a {
-  color: lightgreen;
-  text-decoration: none;
+form {
+  margin-top: 20px;
 }
 
 .hidden {
   display: none;
+}
+
+footer {
+  margin-top: 50px;
+  background-color: #eee;
+  padding: 20px;
+  font-size: 14px;
 }
