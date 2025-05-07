@@ -3,58 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Empanada La Seguidilla 2.0</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Empanada La Seguidilla 2.1</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
   <header>
-    <img src="tu-logo.png" alt="Logo" class="logo" />
+    <img src="logo.png" alt="Logo" class="logo">
     <h1>Empanada La Seguidilla</h1>
   </header>
 
-  <div class="botones-principales">
-    <button onclick="showLogin()">Soy Cliente</button>
-    <button onclick="showClientForm()">Quiero Ser Cliente</button>
+  <div id="loginSection">
+    <div class="login-box">
+      <input type="text" id="loginUser" placeholder="Usuario" />
+      <input type="password" id="loginPassword" placeholder="Contraseña" />
+      <button class="toggle-password" onclick="togglePassword()">Mostrar/Ocultar</button>
+      <button onclick="iniciarSesion()">Continuar</button>
+    </div>
+    <div class="extra-buttons">
+      <button onclick="mostrarFormulario()">Quiero ser cliente</button>
+      <button onclick="mostrarLogin()">Soy cliente</button>
+    </div>
   </div>
 
-  <form id="loginForm" class="hidden" onsubmit="verificarCliente(event)">
-    <input type="text" id="loginUsuario" placeholder="Usuario" required />
-    <input type="password" id="loginClave" placeholder="Contraseña" required />
-    <button type="submit">Continuar</button>
-  </form>
+  <div id="formularioCliente">
+    <h2>Formulario de Registro</h2>
+    <form id="clienteForm">
+      <input type="text" placeholder="Nombre" required><br>
+      <input type="text" placeholder="Apellido" required><br>
+      <input type="text" placeholder="Dirección" required><br>
+      <input type="tel" placeholder="Teléfono (con WhatsApp)" required><br>
+      <select required>
+        <option value="">Seleccione su género</option>
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+      </select><br>
+      <input type="text" placeholder="Usuario deseado" required><br>
+      <input type="password" placeholder="Contraseña" required><br>
+      <input type="password" placeholder="Confirmar contraseña" required><br>
+      <button type="submit">Registrarse</button>
+    </form>
+  </div>
 
-  <form id="clientForm" class="hidden" onsubmit="sendClientForm(event)">
-    <input type="text" id="nombre" placeholder="Nombre" required />
-    <input type="text" id="apellido" placeholder="Apellido" required />
-    <input type="text" id="direccion" placeholder="Dirección" required />
-    <input type="tel" id="telefono" placeholder="Teléfono con WhatsApp" required />
-    <select id="genero" required>
-      <option value="">Seleccione género</option>
-      <option value="masculino">Masculino</option>
-      <option value="femenino">Femenino</option>
-      <option value="otro">Otro</option>
-    </select>
-    <input type="text" id="usuario" placeholder="Usuario (correo o nombre de usuario)" required />
-    <input type="password" id="clave" placeholder="Contraseña" required />
-    <input type="password" id="confirmar" placeholder="Confirmar contraseña" required />
-    <button type="submit">Registrarse</button>
-  </form>
-
-  <div id="mensajeBienvenida" class="hidden">
-    <h2>¡Bienvenido, cliente autorizado!</h2>
-    <p>Aquí puedes ver el contenido exclusivo de tu cuenta.</p>
+  <div id="bienvenida">
+    <h2>Bienvenido a Empanada La Seguidilla</h2>
+    <p>Gracias por ser parte de nuestra comunidad.</p>
   </div>
 
   <footer>
     <p>Tel: 8494716682 | WhatsApp: 8494716682</p>
     <p>
-      Instagram: <a href="https://www.instagram.com/empanadalaseguidilla?igsh=MWprZGtyNHB4ZDY0NA==" target="_blank">empanadalaseguidilla</a> |
-      TikTok: <a href="https://www.tiktok.com/@empanadalaseguidilla?_t=ZS-8w9L4Nxt7Dj&_r=1" target="_blank">@empanadalaseguidilla</a>
+      <a href="https://www.instagram.com/empanadalaseguidilla?igsh=MWprZGtyNHB4ZDY0NA==" target="_blank">Instagram</a> |
+      <a href="https://www.tiktok.com/@empanadalaseguidilla?_t=ZS-8w9L4Nxt7Dj&_r=1" target="_blank">TikTok</a>
     </p>
-    <p><a href="https://maps.app.goo.gl/edkYETFyZBLfReXS7?g_st=aw" target="_blank">Ensanche Luperón, Calle 6 Sur</a></p>
+    <p><a href="https://maps.app.goo.gl/edkYETFyZBLfReXS7?g_st=aw" target="_blank">Dirección</a></p>
   </footer>
 
-  <script src="clientes.js"></script>
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
