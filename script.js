@@ -64,12 +64,38 @@ function verificarCliente(event) {
   }
 }
 
-const clientesAutorizados = [
-  {
-    usuario: "Wilkin2000",
-    contrasena: "wilkin#2000"
-  },
-  // Espacio para 19 clientes más
-  // { usuario: "cliente2", contrasena: "clave2" },
-  // { usuario: "cliente3", contrasena: "clave3" },
-];
+const usuariosAutorizados = {
+  "Wilkin2000": "wilkin#2000",
+  // Aquí puedes agregar los otros 19 clientes cuando quieras
+};
+
+function togglePassword() {
+  const passInput = document.getElementById("loginPassword");
+  passInput.type = passInput.type === "password" ? "text" : "password";
+}
+
+function mostrarFormulario() {
+  document.getElementById("formularioCliente").style.display = "block";
+  document.getElementById("loginSection").style.display = "none";
+  document.getElementById("bienvenida").style.display = "none";
+}
+
+function mostrarLogin() {
+  document.getElementById("formularioCliente").style.display = "none";
+  document.getElementById("loginSection").style.display = "block";
+  document.getElementById("bienvenida").style.display = "none";
+}
+
+function iniciarSesion() {
+  const user = document.getElementById("loginUser").value;
+  const pass = document.getElementById("loginPassword").value;
+
+  if (usuariosAutorizados[user] === pass) {
+    document.getElementById("loginSection").style.display = "none";
+    document.getElementById("formularioCliente").style.display = "none";
+    document.getElementById("bienvenida").style.display = "block";
+    window.scrollTo(0, 0);
+  } else {
+    alert("Usuario o contraseña incorrectos.");
+  }
+}
