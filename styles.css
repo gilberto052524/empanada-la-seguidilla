@@ -1,45 +1,44 @@
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #000;
+  margin: 0;
+  text-align: center;
+  background-color: #f9f9f9;
 }
 
 header {
-  text-align: center;
-  background-color: #fff;
   padding: 20px;
 }
 
-#logo {
-  width: 120px;
+.logo {
+  width: 150px;
   height: auto;
-  display: block;
-  margin: 0 auto 10px;
+  border-radius: 50px; /* Bordes más redondos */
 }
 
 h1 {
-  margin: 0;
-  font-size: 24px;
+  color: #333;
+  margin-top: 10px;
 }
 
 .login-container {
-  background-color: #fff;
-  border: 2px solid green;
-  border-radius: 8px;
-  max-width: 300px;
   margin: 30px auto;
   padding: 20px;
-  text-align: center;
+  width: 90%;
+  max-width: 300px;
+  border: 2px solid green;
+  border-radius: 10px;
+  background-color: white;
 }
 
 .login-container input {
+  display: block;
   width: 100%;
   padding: 10px;
   margin: 10px 0;
-  border: 1px solid green;
-  border-radius: 4px;
+  border: 2px solid green;
+  border-radius: 5px;
   color: black;
+  font-size: 16px;
 }
 
 .login-container button {
@@ -47,20 +46,38 @@ h1 {
   padding: 10px;
   background-color: green;
   color: white;
+  font-size: 16px;
   border: none;
-  border-radius: 4px;
-  font-weight: bold;
+  border-radius: 5px;
   cursor: pointer;
+}
+
+/* Botones adicionales fuera del login */
+.extra-buttons {
+  margin-top: 20px;
+}
+
+.extra-buttons button {
+  width: 90%;
+  max-width: 300px;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: green;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
 }
 
 footer {
   background-color: #eee;
-  padding: 20px;
-  text-align: center;
+  padding: 15px;
   font-size: 14px;
 }
 
 footer a {
-  color: #000;
+  color: green;
   text-decoration: none;
 }
