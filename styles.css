@@ -1,83 +1,84 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
+  padding: 0;
+  background: #f2f2f2;
   text-align: center;
-  background-color: #f9f9f9;
 }
 
 header {
+  background: #fff;
   padding: 20px;
 }
 
 .logo {
-  width: 150px;
+  width: 120px;
   height: auto;
-  border-radius: 50px; /* Bordes más redondos */
+  border-radius: 25px;
 }
 
 h1 {
-  color: #333;
-  margin-top: 10px;
+  margin: 10px 0 0;
 }
 
-.login-container {
-  margin: 30px auto;
-  padding: 20px;
-  width: 90%;
-  max-width: 300px;
-  border: 2px solid green;
+.button-container {
+  margin: 20px;
+}
+
+.option-button {
+  padding: 10px 20px;
+  margin: 10px;
+  background: green;
+  color: white;
+  border: none;
   border-radius: 10px;
-  background-color: white;
+  font-size: 16px;
 }
 
-.login-container input {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
+.form-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 2px solid green;
-  border-radius: 5px;
-  color: black;
-  font-size: 16px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 10px;
 }
 
-.login-container button {
+.form-box input,
+.form-box select {
   width: 100%;
   padding: 10px;
-  background-color: green;
-  color: white;
-  font-size: 16px;
-  border: none;
+  margin: 8px 0;
+  border: 1px solid green;
+  color: black;
   border-radius: 5px;
-  cursor: pointer;
 }
 
-/* Botones adicionales fuera del login */
-.extra-buttons {
-  margin-top: 20px;
-}
-
-.extra-buttons button {
-  width: 90%;
-  max-width: 300px;
-  margin: 10px auto;
+.form-box button {
+  width: 100%;
   padding: 10px;
-  background-color: green;
+  background: green;
   color: white;
-  font-size: 16px;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
-  display: block;
 }
 
 footer {
-  background-color: #eee;
-  padding: 15px;
+  background: #333;
+  color: #fff;
+  padding: 20px;
   font-size: 14px;
 }
 
 footer a {
-  color: green;
+  color: lightgreen;
   text-decoration: none;
+}
+
+.hidden {
+  display: none;
 }
