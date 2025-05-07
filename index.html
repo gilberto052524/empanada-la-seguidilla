@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Empanada la Seguidilla</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <header>
-    <!-- Logo (puedes reemplazar el src con tu archivo) -->
-    <img src="tu-logo.png" alt="Logo del negocio" id="logo" />
+    <img src="logo.png" alt="Logo del negocio" class="logo">
     <h1>Empanada la Seguidilla</h1>
   </header>
 
-  <main>
-    <div class="login-container">
-      <h2>Inicio de sesión</h2>
-      <form id="loginForm">
-        <input type="text" id="userId" placeholder="ID" required />
-        <input type="password" id="password" placeholder="Contraseña" required />
-        <button type="submit">Continuar</button>
-      </form>
-    </div>
-  </main>
+  <section class="login-container">
+    <form>
+      <input type="text" placeholder="ID" value="40215118684" readonly>
+      <input type="password" placeholder="Contraseña" value="empanadalaseguidilla" readonly>
+      <button type="submit">Continuar</button>
+    </form>
+  </section>
+
+  <!-- Botones fuera del cuadro de login -->
+  <section class="extra-buttons">
+    <button>Quiero ser cliente</button>
+    <button>Soy cliente</button>
+  </section>
 
   <footer>
-    <p><strong>Tel:</strong> <a href="tel:8494716682">8494716682</a></p>
-    <p><strong>WhatsApp:</strong> <a href="https://wa.me/18494716682" target="_blank">8494716682</a></p>
-    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/empanadalaseguidilla?igsh=MWprZGtyNHB4ZDY0NA==" target="_blank">empanadalaseguidilla</a></p>
-    <p><strong>TikTok:</strong> <a href="https://www.tiktok.com/@empanadalaseguidilla?_t=ZS-8w9L4Nxt7Dj&_r=1" target="_blank">@empanadalaseguidilla</a></p>
-    <p><strong>Dirección:</strong> <a href="https://maps.app.goo.gl/edkYETFyZBLfReXS7?g_st=aw" target="_blank">Ver en mapa</a></p>
+    <p>Teléfono: 8494716682</p>
+    <p>WhatsApp: 8494716682</p>
+    <p>Instagram: <a href="https://www.instagram.com/empanadalaseguidilla?igsh=MWprZGtyNHB4ZDY0NA==" target="_blank">empanadalaseguidilla</a></p>
+    <p>TikTok: <a href="https://www.tiktok.com/@empanadalaseguidilla?_t=ZS-8w9L4Nxt7Dj&_r=1" target="_blank">@empanadalaseguidilla</a></p>
+    <p>Dirección: <a href="https://maps.app.goo.gl/edkYETFyZBLfReXS7?g_st=aw" target="_blank">Ver en Google Maps</a></p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
