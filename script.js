@@ -36,5 +36,10 @@ function sendClientForm(event) {
     Contraseña: ${clave}
   `;
 
+  // Enviar email
   window.location.href = `mailto:empanadalaseguidilla@gmail.com?subject=Nuevo Registro de Cliente&body=${encodeURIComponent(mensaje)}`;
+
+  // Volver al inicio y ocultar el formulario
+  document.getElementById("clientForm").classList.add("hidden");
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
