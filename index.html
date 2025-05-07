@@ -1,36 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Empanada la Seguidilla</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Empanada La Seguidilla</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <img src="tu-logo.png" alt="Logo del negocio" class="logo">
+    <img src="logo.png" alt="Logo del negocio" class="logo" />
     <h1>Empanada la Seguidilla</h1>
   </header>
 
-  <section class="login-container">
-    <form>
-      <input type="text" placeholder="ID" value="40215118684" readonly>
-      <input type="password" placeholder="Contraseña" value="empanadalaseguidilla" readonly>
-      <button type="submit">Continuar</button>
-    </form>
-  </section>
+  <div class="button-container">
+    <button class="option-button" onclick="showClientForm()">Quiero ser cliente</button>
+    <button class="option-button" onclick="showLogin()">Soy cliente</button>
+  </div>
 
-  <!-- Botones fuera del cuadro de login -->
-  <section class="extra-buttons">
-    <button>Quiero ser cliente</button>
-    <button>Soy cliente</button>
-  </section>
+  <main>
+    <form id="loginForm" class="hidden form-box">
+      <input type="text" placeholder="ID" value="40215118684" readonly />
+      <input type="password" placeholder="Contraseña" value="empanadalaseguidilla" readonly />
+      <button type="button">Continuar</button>
+    </form>
+
+    <form id="clientForm" class="hidden form-box" onsubmit="sendClientForm(event)">
+      <input type="text" id="nombre" placeholder="Nombre" required />
+      <input type="text" id="apellido" placeholder="Primer Apellido" required />
+      <input type="text" id="direccion" placeholder="Dirección" required />
+      <input type="tel" id="telefono" placeholder="Teléfono con WhatsApp" required />
+      <select id="genero" required>
+        <option value="">Selecciona tu género</option>
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+        <option value="otro">Otro</option>
+      </select>
+      <input type="text" id="usuario" placeholder="Usuario o correo" required />
+      <input type="password" id="clave" placeholder="Contraseña" required />
+      <input type="password" id="confirmar" placeholder="Confirmar contraseña" required />
+      <button type="submit">Registrarse</button>
+    </form>
+  </main>
 
   <footer>
-    <p>Teléfono: 8494716682</p>
-    <p>WhatsApp: 8494716682</p>
-    <p>Instagram: <a href="https://www.instagram.com/empanadalaseguidilla?igsh=MWprZGtyNHB4ZDY0NA==" target="_blank">empanadalaseguidilla</a></p>
-    <p>TikTok: <a href="https://www.tiktok.com/@empanadalaseguidilla?_t=ZS-8w9L4Nxt7Dj&_r=1" target="_blank">@empanadalaseguidilla</a></p>
-    <p>Dirección: <a href="https://maps.app.goo.gl/edkYETFyZBLfReXS7?g_st=aw" target="_blank">Ver en Google Maps</a></p>
+    <p>Teléfono y WhatsApp: <a href="tel:8494716682">849-471-6682</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/empanadalaseguidilla" target="_blank">Ver perfil</a></p>
+    <p>TikTok: <a href="https://www.tiktok.com/@empanadalaseguidilla" target="_blank">Ver perfil</a></p>
+    <p>Dirección: <a href="https://maps.app.goo.gl/edkYETFyZBLfReXS7" target="_blank">Ver en Google Maps</a></p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
