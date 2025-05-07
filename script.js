@@ -1,11 +1,13 @@
 function showLogin() {
   document.getElementById("loginForm").classList.remove("hidden");
   document.getElementById("clientForm").classList.add("hidden");
+  document.getElementById("mensajeBienvenida").classList.add("hidden");
 }
 
 function showClientForm() {
   document.getElementById("clientForm").classList.remove("hidden");
   document.getElementById("loginForm").classList.add("hidden");
+  document.getElementById("mensajeBienvenida").classList.add("hidden");
 }
 
 function sendClientForm(event) {
@@ -36,10 +38,38 @@ function sendClientForm(event) {
     Contraseña: ${clave}
   `;
 
-  // Enviar email
   window.location.href = `mailto:empanadalaseguidilla@gmail.com?subject=Nuevo Registro de Cliente&body=${encodeURIComponent(mensaje)}`;
 
-  // Volver al inicio y ocultar el formulario
+  document.getElementById("clientForm").reset();
   document.getElementById("clientForm").classList.add("hidden");
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+function verificarCliente(event) {
+  event.preventDefault();
+
+  const usuario = document.getElementById("loginUsuario").value;
+  const clave = document.getElementById("loginClave").value;
+
+  const clienteValido = clientesAutorizados.find(
+    (c) => c.usuario === usuario && c.contrasena === clave
+  );
+
+  if (clienteValido) {
+    document.getElementById("mensajeBienvenida").classList.remove("hidden");
+    document.getElementById("loginForm").classList.add("hidden");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    alert("Usuario o contraseña incorrectos.");
+  }
+}
+
+const clientesAutorizados = [
+  {
+    usuario: "Wilkin2000",
+    contrasena: "wilkin#2000"
+  },
+  // Espacio para 19 clientes más
+  // { usuario: "cliente2", contrasena: "clave2" },
+  // { usuario: "cliente3", contrasena: "clave3" },
+];
