@@ -4,34 +4,164 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Empanada La Seguidilla</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfdfd;
+      color: #333;
+    }
+
+    header {
+      background-color: #e74c3c;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+    }
+
+    header .logo {
+      width: 60px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    header h1 {
+      font-size: 1.5em;
+      margin: 0;
+    }
+
+    .login-box input, .login-box button {
+      display: block;
+      margin: 10px auto;
+      padding: 12px;
+      width: 90%;
+      max-width: 320px;
+      font-size: 1em;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .login-box button {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .extra-buttons {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .extra-buttons button {
+      margin: 5px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      background-color: #3498db;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    #formularioCliente, #bienvenida, #negocioPrincipal, #menu {
+      display: none;
+      padding: 20px;
+    }
+
+    #negocioPrincipal {
+      text-align: center;
+    }
+
+    #negocioPrincipal img {
+      width: 80px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    #negocioPrincipal h1 {
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 1.5em;
+      vertical-align: middle;
+    }
+
+    main.menu {
+      max-width: 700px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    main.menu h2 {
+      color: #e74c3c;
+      margin-top: 20px;
+    }
+
+    main.menu ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      background-color: #f1f1f1;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+    footer a {
+      color: #e74c3c;
+      margin: 0 5px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 480px) {
+      header h1, #negocioPrincipal h1 {
+        font-size: 1.2em;
+      }
+
+      #negocioPrincipal img {
+        width: 60px;
+      }
+
+      main.menu {
+        padding: 15px;
+      }
+
+      .login-box input, .login-box button {
+        font-size: 0.95em;
+        padding: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-
-  <!-- ENCABEZADO CON LOGO -->
   <header>
-    <div class="logo-background">
-      <img src="logo-els.png" alt="Logo ELS" class="logo">
-    </div>
+    <img src="tu-logo.png" alt="Logo" class="logo">
     <h1>Empanada La Seguidilla</h1>
   </header>
 
-  <!-- SECCIÓN DE LOGIN -->
   <div id="loginSection">
     <div class="login-box">
       <input type="text" id="loginUser" placeholder="Usuario" />
       <input type="password" id="loginPassword" placeholder="Contraseña" />
-      <button class="toggle-password" onclick="togglePassword()">Mostrar/Ocultar</button>
-      <button onclick="iniciarSesion()">Continuar</button>
+      <button onclick="togglePassword()">Mostrar/Ocultar</button>
+      <button onclick="iniciarSesion()">Iniciar Sesión</button>
     </div>
     <div class="extra-buttons">
       <button onclick="mostrarFormulario()">Quiero ser cliente</button>
-      <button onclick="mostrarLogin()">Soy cliente</button>
+      <button onclick="mostrarLogin()">Ya tengo cuenta</button>
     </div>
   </div>
 
-  <!-- FORMULARIO DE REGISTRO -->
-  <div id="formularioCliente" style="display: none;">
+  <div id="formularioCliente">
     <h2>Formulario de Registro</h2>
     <form id="clienteForm">
       <input type="text" placeholder="Nombre" required><br>
@@ -50,14 +180,17 @@
     </form>
   </div>
 
-  <!-- SECCIÓN DE BIENVENIDA (APARECE TRAS INICIAR SESIÓN) -->
-  <div id="bienvenida" style="display: none;">
-    <h2>Bienvenido a Empanada La Seguidilla</h2>
+  <div id="bienvenida">
+    <h2>¡Bienvenido a Empanada La Seguidilla!</h2>
     <p>Gracias por ser parte de nuestra comunidad.</p>
   </div>
 
-  <!-- MENÚ DE EMPANADAS -->
-  <main class="menu">
+  <div id="negocioPrincipal">
+    <img src="tu-logo.png" alt="Logo ELS">
+    <h1>Empanada La Seguidilla</h1>
+  </div>
+
+  <main id="menu" class="menu">
     <h2>Ingredientes Disponibles</h2>
     <ul>
       <li>Pollo</li>
@@ -76,31 +209,59 @@
     </ul>
 
     <h2>Empanadas por Ingredientes</h2>
-    <p>Empanadas de 3 ingredientes - <strong>$70</strong></p>
-    <p>Empanadas de 4 ingredientes - <strong>$80</strong></p>
-    <p>Empanada de 5 ingredientes - <strong>$100</strong></p>
+    <p>3 ingredientes - <strong>$70</strong></p>
+    <p>4 ingredientes - <strong>$80</strong></p>
+    <p>5 ingredientes - <strong>$100</strong></p>
 
     <h2>Empanadas Completas</h2>
-    <p>Con o sin Salsa de Pizza (Preferencia al elegir)</p>
-    <p>Jamón y queso, pollo, res, vegetales, peperoni, huevo hervido o crudo - <strong>$100</strong></p>
-    <p>Jamón, queso, peperoni, vegetales, salami picante, pollo, res, huevo hervido o crudo - <strong>$125</strong></p>
-    <p>Doble queso, jamón, pollo, res, vegetales, peperoni, salchicha, salami picante, atún con maíz, huevo hervido o crudo - <strong>$150</strong></p>
+    <p>Salsa opcional</p>
+    <p>Básicas - <strong>$100</strong></p>
+    <p>Intermedias - <strong>$125</strong></p>
+    <p>Premium - <strong>$150</strong></p>
 
-    <h2>Completas de 2 Tapa</h2>
-    <p>Salsa de pizza, doble queso, queso amarillo, jamón y queso, jamón, salami picante, salchicha, atún con maíz, huevo hervido o crudo - <strong>$200</strong></p>
+    <h2>Completas de 2 Tapas</h2>
+    <p>Combinación especial - <strong>$200</strong></p>
   </main>
 
-  <!-- PIE DE PÁGINA CON DATOS DE CONTACTO -->
   <footer>
     <p>Tel: 8494716682 | WhatsApp: 8494716682</p>
     <p>
-      <a href="https://www.instagram.com/empanadalaseguidilla?igsh=MWprZGtyNHB4ZDY0NA==" target="_blank">Instagram</a> |
-      <a href="https://www.tiktok.com/@empanadalaseguidilla?_t=ZS-8w9L4Nxt7Dj&_r=1" target="_blank">TikTok</a>
+      <a href="https://www.instagram.com/empanadalaseguidilla" target="_blank">Instagram</a> |
+      <a href="https://www.tiktok.com/@empanadalaseguidilla" target="_blank">TikTok</a>
     </p>
-    <p><a href="https://maps.app.goo.gl/edkYETFyZBLfReXS7?g_st=aw" target="_blank">Dirección</a></p>
+    <p><a href="https://maps.app.goo.gl/edkYETFyZBLfReXS7" target="_blank">Ver ubicación</a></p>
   </footer>
 
-  <!-- ARCHIVO JS PARA FUNCIONES DE LOGIN Y REGISTRO -->
-  <script src="script.js"></script>
+  <script>
+    function togglePassword() {
+      const password = document.getElementById('loginPassword');
+      password.type = password.type === 'password' ? 'text' : 'password';
+    }
+
+    function iniciarSesion() {
+      const user = document.getElementById('loginUser').value;
+      const password = document.getElementById('loginPassword').value;
+
+      if (user && password) {
+        document.getElementById('loginSection').style.display = 'none';
+        document.getElementById('formularioCliente').style.display = 'none';
+        document.getElementById('bienvenida').style.display = 'block';
+        document.getElementById('negocioPrincipal').style.display = 'block';
+        document.getElementById('menu').style.display = 'block';
+      } else {
+        alert("Por favor, ingresa usuario y contraseña.");
+      }
+    }
+
+    function mostrarFormulario() {
+      document.getElementById('formularioCliente').style.display = 'block';
+      document.getElementById('loginSection').style.display = 'none';
+    }
+
+    function mostrarLogin() {
+      document.getElementById('formularioCliente').style.display = 'none';
+      document.getElementById('loginSection').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
