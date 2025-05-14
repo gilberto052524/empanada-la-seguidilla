@@ -3,15 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Empanada La Seguidilla 2.1</title>
+  <title>Empanada La Seguidilla</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- ENCABEZADO CON LOGO -->
   <header>
-    <img src="tu-logo.png" alt="Logo" class="logo">
+    <div class="logo-background">
+      <img src="logo-els.png" alt="Logo ELS" class="logo">
+    </div>
     <h1>Empanada La Seguidilla</h1>
   </header>
 
+  <!-- SECCIÓN DE LOGIN -->
   <div id="loginSection">
     <div class="login-box">
       <input type="text" id="loginUser" placeholder="Usuario" />
@@ -25,7 +30,8 @@
     </div>
   </div>
 
-  <div id="formularioCliente">
+  <!-- FORMULARIO DE REGISTRO -->
+  <div id="formularioCliente" style="display: none;">
     <h2>Formulario de Registro</h2>
     <form id="clienteForm">
       <input type="text" placeholder="Nombre" required><br>
@@ -44,11 +50,47 @@
     </form>
   </div>
 
-  <div id="bienvenida">
+  <!-- SECCIÓN DE BIENVENIDA (APARECE TRAS INICIAR SESIÓN) -->
+  <div id="bienvenida" style="display: none;">
     <h2>Bienvenido a Empanada La Seguidilla</h2>
     <p>Gracias por ser parte de nuestra comunidad.</p>
   </div>
 
+  <!-- MENÚ DE EMPANADAS -->
+  <main class="menu">
+    <h2>Ingredientes Disponibles</h2>
+    <ul>
+      <li>Pollo</li>
+      <li>Res</li>
+      <li>Queso</li>
+      <li>Doble queso</li>
+      <li>Jamón</li>
+      <li>Jamón y queso</li>
+      <li>Peperoni</li>
+      <li>Vegetales</li>
+      <li>Salchicha</li>
+      <li>Salami picante</li>
+      <li>Huevo hervido</li>
+      <li>Huevo crudo</li>
+      <li>Salsa de pizza de la casa</li>
+    </ul>
+
+    <h2>Empanadas por Ingredientes</h2>
+    <p>Empanadas de 3 ingredientes - <strong>$70</strong></p>
+    <p>Empanadas de 4 ingredientes - <strong>$80</strong></p>
+    <p>Empanada de 5 ingredientes - <strong>$100</strong></p>
+
+    <h2>Empanadas Completas</h2>
+    <p>Con o sin Salsa de Pizza (Preferencia al elegir)</p>
+    <p>Jamón y queso, pollo, res, vegetales, peperoni, huevo hervido o crudo - <strong>$100</strong></p>
+    <p>Jamón, queso, peperoni, vegetales, salami picante, pollo, res, huevo hervido o crudo - <strong>$125</strong></p>
+    <p>Doble queso, jamón, pollo, res, vegetales, peperoni, salchicha, salami picante, atún con maíz, huevo hervido o crudo - <strong>$150</strong></p>
+
+    <h2>Completas de 2 Tapa</h2>
+    <p>Salsa de pizza, doble queso, queso amarillo, jamón y queso, jamón, salami picante, salchicha, atún con maíz, huevo hervido o crudo - <strong>$200</strong></p>
+  </main>
+
+  <!-- PIE DE PÁGINA CON DATOS DE CONTACTO -->
   <footer>
     <p>Tel: 8494716682 | WhatsApp: 8494716682</p>
     <p>
@@ -58,6 +100,7 @@
     <p><a href="https://maps.app.goo.gl/edkYETFyZBLfReXS7?g_st=aw" target="_blank">Dirección</a></p>
   </footer>
 
+  <!-- ARCHIVO JS PARA FUNCIONES DE LOGIN Y REGISTRO -->
   <script src="script.js"></script>
 </body>
 </html>
